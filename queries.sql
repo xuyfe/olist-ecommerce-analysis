@@ -315,6 +315,19 @@ ORDER BY avg_rating DESC;
 -- at around 4/5
 
 
+-- average ratings by state
+SELECT
+	customer_state,
+	customer_region,
+	ROUND(AVG(review_score), 2) as avg_rating
+FROM sale_per_customer
+GROUP BY customer_state, customer_region
+ORDER BY avg_rating DESC;
+-- most states have an average rating of 4 or more
+-- but the highest rated and lowest rated states are
+-- both in the Northern regions; suggest investigate
+-- carriers, products, etc.
+
 ------------------------------------------------------------
 ----------------------- Shippings --------------------------
 ------------------------------------------------------------
