@@ -18,6 +18,8 @@ Olist serves in the B2B, SaaS space in the Retail market segments.
 ## Data Structure
 The data contains orders by over 90,000 customers and from over 3,000 sellers, from late 2016 to 2018. A schema is provided below:
 
+![Database Schema](database/schema.png)
+
 ## Insights Summary
 
 ## Recommendations
