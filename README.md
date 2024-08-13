@@ -21,6 +21,15 @@ The data contains orders by over 90,000 customers and from over 3,000 sellers, f
 ![Database Schema](database/schema.png)
 
 ## Insights Summary
+We focused on the following KPIs:
+1. **Sales Growth Rate**: the percentage change in the total sales over 2017 and 2018. We further partition by product category and region.
+2. **Average Sales Value**: the average value of the purchases made by a customer. We further partition by product category, location, and payment type.
+3. ****
+
+#### Sales Growth Rate
+- Overall sales increased **22.26%** from 2017 to 2018.
+- Across product categories, **Construction Materials** and **Food and Drinks** experienced the most growth, with **267%** and **126%** respectively. The only categories that experienced a negative growth were the **Entertainment** and **Fashion** categories, with a **3.82%** and **11.75% decrease** respectively.
+- The state **Roraima (RR)** experienced the most growth of **247%**, more than **5X** the second-highest sales growth state. There were five states with decrease in total sales value, and the state that experienced the most decrease was **Acre (AC)**, at almost **50% decrease in total sales**.
 
 ## Recommendations
 

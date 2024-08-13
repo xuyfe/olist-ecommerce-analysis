@@ -205,14 +205,59 @@ ORDER BY customer_state, num_orders DESC;
 ------------------- Sales Growth Rate ----------------------
 ------------------------------------------------------------
 
--- overall, per year
+-- we only use 2017 and 2018, since the data for 2016 is limited
 
+-- overall, per year
+WITH sales_per_year AS (
+    SELECT
+        EXTRACT(YEAR FROM purchased_date) as year,
+        SUM(sales_value) as sales_value
+    FROM sale_per_customer
+    WHERE EXTRACT(YEAR FROM purchased_date) IN (2017, 2018)
+    GROUP BY year
+)
+SELECT 
+    year,
+    sales_value,
+    ROUND((sales_value - LAG(sales_value) OVER (ORDER BY year)) / LAG(sales_value) OVER (ORDER BY year) * 100, 2) as growth_rate
+FROM sales_per_year
+ORDER BY year DESC;
 
 -- per product category, per year
-
+WITH sales_per_cat_year AS (
+    SELECT
+		product_category,
+        EXTRACT(YEAR FROM purchased_date) as year,
+        SUM(sales_value) as sales_value
+    FROM sale_per_customer
+    WHERE EXTRACT(YEAR FROM purchased_date) IN (2017, 2018)
+    GROUP BY year, product_category
+)
+SELECT 
+	product_category,
+    year,
+    sales_value,
+    ROUND((sales_value - LAG(sales_value) OVER (PARTITION BY product_category ORDER BY year)) / LAG(sales_value) OVER (PARTITION BY product_category ORDER BY year) * 100, 2) as growth_rate
+FROM sales_per_cat_year
+ORDER BY year DESC, growth_rate DESC;
 
 -- per state/region, per year
-
+WITH sales_per_state_year AS (
+    SELECT
+		customer_state,
+        EXTRACT(YEAR FROM purchased_date) as year,
+        SUM(sales_value) as sales_value
+    FROM sale_per_customer
+    WHERE EXTRACT(YEAR FROM purchased_date) IN (2017, 2018)
+    GROUP BY year, customer_state
+)
+SELECT 
+	customer_state,
+    year,
+    sales_value,
+    ROUND((sales_value - LAG(sales_value) OVER (PARTITION BY customer_state ORDER BY year)) / LAG(sales_value) OVER (PARTITION BY customer_state ORDER BY year) * 100, 2) as growth_rate
+FROM sales_per_state_year
+ORDER BY year DESC, growth_rate DESC;
 
 ------------------------------------------------------------
 ----------------------- Payments ---------------------------
