@@ -54,6 +54,10 @@ We focused on the following KPIs:
 2. **Focus on Regions with Lower Ratings:**
      - Investigate why the states with both the highest and lowest average ratings are located in the North and Northeast regions. Consider starting with carriers and suppliers to analyze product quality and delivery.
 
+3. **Optimize Payment Processes**
+    - Enhance Security for Credit Card Transactions: With credit card payments making up over 70% of orders and having the highest average sales value, it's crucial to equip small- and medium-sized businesses on Olist with robust fraud prevention and detection tools.
+    - Optimize Payment Processing Costs: Assess the costs associated with various payment methods and explore opportunities to negotiate more favorable terms with payment processors. This could include reducing credit card fees, enhancing customer benefits, or securing additional advantages.
+
 ### **Marketing Team Recommendations:**
 1. **Targeted Advertising Campaigns:**
    - Launch localized advertising campaigns in states and categories with high growth, like **Roraima (RR)** and **Construction Materials**, to further boost brand awareness and capitalize on the growing market.
