@@ -1,6 +1,6 @@
 -- complete table of delivered orders
-CREATE OR REPLACE VIEW sale_per_customer AS (
-SELECT 
+CREATE OR REPLACE VIEW sale_per_customer AS
+(SELECT 
 	c.customer_id,
 	o.order_id,
 	p.product_id,
@@ -21,6 +21,9 @@ SELECT
 	ot.price,
 	ot.freight_value,
 	op.payment_value AS sales_value,
+	DATE(o.order_purchase_timestamp) as purchased_date,
+	DATE(o.order_delivered_customer_date) as delivered_date,
+	DATE(o.order_estimated_delivery_date) as expected_delivery_date,
 	(DATE(o.order_delivered_customer_date) - DATE(o.order_purchase_timestamp)) AS delivery_days,
 	(DATE(o.order_delivered_customer_date) - DATE(o.order_estimated_delivery_date)) AS delayed_days
 FROM customers c
@@ -141,6 +144,7 @@ LIMIT 10;
 -- sales value per customer also had comparably low
 -- total number of orders (rarely exceeding 1000)
 
+
 -- calculate average sales by category
 -- CREATE OR REPLACE VIEW sales_per_cat AS
 (SELECT
@@ -166,6 +170,7 @@ ORDER BY avg_sales_value DESC;
 -- over 70% of orders were payed with a credit card,
 -- and sales by credit card also had an average sales value
 -- over 10% higher than sales by boleto.
+
 
 -- relationship between freight value on delivery time and sales value
 -- CREATE OR REPLACE VIEW freight_delivery_sales AS 
@@ -194,6 +199,20 @@ GROUP BY customer_state, product_category
 ORDER BY customer_state, num_orders DESC;
 -- electronic products are the most popular
 -- for the majority of states
+
+
+------------------------------------------------------------
+------------------- Sales Growth Rate ----------------------
+------------------------------------------------------------
+
+-- overall, per year
+
+
+-- per product category, per year
+
+
+-- per state/region, per year
+
 
 ------------------------------------------------------------
 ----------------------- Payments ---------------------------
