@@ -46,10 +46,6 @@ We focused on the following KPIs:
    - Invest in expanding product lines and marketing efforts for **Construction Materials** and **Food and Drinks**, as these categories are experiencing significant growth.
    - Explore opportunities to revive the **Entertainment** and **Fashion** categories by analyzing market demand and customer preferences to tailor offerings.
 
-2. **Regional Sales Strategy:**
-   - Develop targeted sales campaigns in **Roraima (RR)** to capitalize on the region's high growth. Consider partnering with local distributors or expanding product availability.
- 
-
 ### **Logistics Team Recommendations:**
 1. **Optimize Delivery in High Order States:**
    - Enhance logistics and distribution channels in **Sao Paulo (SP)**, which has the highest number of orders, to maintain customer satisfaction and reduce delivery times.
