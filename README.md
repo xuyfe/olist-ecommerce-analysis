@@ -66,6 +66,9 @@ We focused on the following KPIs:
    - Create targeted promotions or bundles for the **Entertainment** and **Fashion** categories to stimulate demand and address the negative growth.
 
 ## Dashboard
+The Tableau Public dashboard can be found [here](https://public.tableau.com/app/profile/owen.xu/viz/OlistDashboard_17235986569100/OlistDashboard?publish=yes).
+
+![Dashboard](olist_dashboard.png)
 
 ## Presentation Sample
 
