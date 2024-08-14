@@ -6,9 +6,10 @@ An in-depth analysis of Olist's online sales with PostgreSQL, Excel, Python, and
 2. [Data Structure](#data-structure)
 3. [Insights for North Star Metrics](#insights-summary)
 4. [Recommendations](#recommendations)
-5. [Tableau Dashboard](#dashboard)
-6. [Presentation](#presentation-sample)
-7. [Citations](#data-source)
+5. [Kruskal and Mutual Information Tests](#statistical-tests)
+6. [Tableau Dashboard](#dashboard)
+7. [Presentation](#presentation-sample)
+8. [Citations](#data-source)
 
 ## What is Olist?
 Olist is a Brazilian online platform that connects micro and small businesses to retailers and marketplaces like Walmart, B2W, Cnova, and more for selling their products. The company enables sellers to manage listings, inventory, orders, shipments and messages at a certain price per month. The shareholders in Olist include 500 Startups, RedPoint Ventures and individual investors such Flavio Dias, CEO of the Original Bank. After 8 funding rounds, Olist has become a Unicorn.
@@ -65,12 +66,29 @@ We focused on the following KPIs:
 2. **Revitalize Low-Growth Categories:**
    - Create targeted promotions or bundles for the **Entertainment** and **Fashion** categories to stimulate demand and address the negative growth.
 
+## Statistical Tests
+We wanted to further investigate whether there are differences in the delivery times for each product category, and whether there is a relationship between delivery days and review scores (for instance, higher delivery days might result in lower customer satisfaction).
+
+To investigate the differences in the delivery times per category, we used the Kruskal-Wallis H Test, which compares the medians of multiple groups without making the assumption that the data within each group is distributed normally or that each group has equal variance.
+
+To investigate the relationship between delivery days and review scores, we used the Mutual Information Regression, which quanitfies the amount of information about a dependent variable that we gain from another variable. We selected this test because it does not assume that the data is linearly related or distributed normally. It is also more resistant to outliers.
+
+**Kruskal-Wallis H Test**:
+- With a p-value of 1.41e-236, there is sufficient evidence to conclude that the median delivery times between categories are significantly different.
+- After performing a post-hoc test, we found that the median delivery times between the Furniture and House & Garden categories differed the most.
+
+**Mutual Information**:
+- The MI score was of around 0.5, meaning we don't gain much information about a customer's review score from the delivery days.
+
 ## Dashboard
 The Tableau Public dashboard can be found [here](https://public.tableau.com/app/profile/owen.xu/viz/OlistDashboard_17235986569100/OlistDashboard?publish=yes).
 
 ![Dashboard](olist_dashboard.png)
 
 ## Presentation Sample
+The full presentation can be accessed [here](https://docs.google.com/presentation/d/1O1Rh6hxph49wenX7319iD-6u4YIZs0r0rODpjmfIZGE/edit?usp=sharing).
+
+![Slide 1](data/Olist%20Project%20Overview.png)
 
 ## Data Source
 https://www.kaggle.com/datasets/bhanuprasadchouki/olist-cleaned-files
