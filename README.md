@@ -90,5 +90,9 @@ The full presentation can be accessed [here](https://docs.google.com/presentatio
 
 ![Slide 1](data/Olist%20Project%20Overview.png)
 
+![Slide 2](data/Olist%20Project%20Overview%20(1).png)
+
+![Slide 3](data/Olist%20Project%20Overview%20(2).png)
+
 ## Data Source
 https://www.kaggle.com/datasets/bhanuprasadchouki/olist-cleaned-files
